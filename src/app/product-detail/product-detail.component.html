@@ -1,0 +1,17 @@
+<p>product-detail works!</p>
+<div>
+    <a class="text-color" (click)="goBack()">back to fruit</a>
+</div>
+<div class="row">
+    <div class="col-md-3">
+        <img class="status text-center" src="assets/images/{{product.productName | lowercase}}.jpg">
+    </div>
+    <div class="col-md-9">
+        <h5>{{product.productName}}</h5>
+        <p class="violet-text-color">{{product.price | currency:'GBP'}}</p>
+        <p class="violet-text-color">Buy now</p>
+        <p>
+            {{productContent.productText}}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="text-right">
+    <div *ngIf="isSortByPrice else isSortByAlpha ">
+        <a class="right-padding" (click)="sortByPrice()">sort by price</a>
+        <span>sort A-Z</span>
+    </div>
+    <ng-template #isSortByAlpha>
+        <span>sort by price</span>
+        <a class="left-padding" (click)="sortByAlpha()">sort A-Z</a>
+    </ng-template>
+</div>
+<div class="card-deck">
+    <div class="card" *ngFor="let product of productList">
+        <div class="text-center">
+           <a (click)="goToDetailScreen(product)">
+               <img class="status text-center" src="assets/images/{{product.productName | lowercase}}.jpg">
+            </a> 
+            </div>
+        <div class="card-body">
+            <h5 class="card-title">{{product.productName}}
+            </h5>
+            <p class="card-text">
+                {{product.description}} {{product.productName}}
+            </p>
+            <p class="violet-text-color">
+                {{product.price | currency:'GBP'}}
+            </p>
+        </div>
+        <div class="card-footer">
+            <small class="basket-color">
+                <a (click)="addToBasket(product.price)">
+                    <mat-icon svgIcon="basket"></mat-icon>
+                </a>
+            </small>
+        </div>
+    </div>
+</div>

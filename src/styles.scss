@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.status {
+    height: 240px;
+    width: 240px;
+  }
+  
+@media only screen and (max-width: 768px) {
+    .status {
+      height: 152px;
+      width: 152px;
+      display: block;
+      margin: auto;
+    }
+}
+
+.violet-text-color {
+  color: blueviolet;
+  font-weight: bold;
+}
